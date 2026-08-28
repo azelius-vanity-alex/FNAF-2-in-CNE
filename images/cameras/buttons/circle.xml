@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="circle.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="circle0000" x="226" y="116" width="5" height="5" frameX="-51" frameY="-51" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0001" x="218" y="116" width="8" height="32" frameX="-24" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0002" x="146" y="174" width="16" height="32" frameX="-24" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0003" x="123" y="174" width="23" height="32" frameX="-24" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0004" x="95" y="174" width="28" height="32" frameX="-24" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0005" x="64" y="174" width="31" height="32" frameX="-24" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0006" x="32" y="174" width="32" height="33" frameX="-24" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0007" x="0" y="174" width="32" height="41" frameX="-24" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0008" x="186" y="116" width="32" height="48" frameX="-24" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0009" x="154" y="116" width="32" height="54" frameX="-24" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0010" x="122" y="116" width="32" height="57" frameX="-24" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0011" x="89" y="116" width="33" height="58" frameX="-23" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0012" x="48" y="116" width="41" height="58" frameX="-15" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0013" x="0" y="116" width="48" height="58" frameX="-8" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0014" x="174" y="58" width="53" height="58" frameX="-3" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0015" x="174" y="0" width="57" height="58" frameX="1" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0016" x="58" y="0" width="58" height="58" frameX="2" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0017" x="116" y="0" width="58" height="58" frameX="2" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0018" x="0" y="58" width="58" height="58" frameX="2" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0019" x="58" y="58" width="58" height="58" frameX="2" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0020" x="116" y="58" width="58" height="58" frameX="2" frameY="2" frameWidth="54" frameHeight="54"/>
+	<SubTexture name="circle0021" x="0" y="0" width="58" height="58" frameX="2" frameY="2" frameWidth="54" frameHeight="54"/>
+</TextureAtlas>

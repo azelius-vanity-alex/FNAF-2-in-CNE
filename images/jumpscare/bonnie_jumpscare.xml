@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bonnie_jumpscare.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="jumpscare0000" x="2093" y="1544" width="500" height="502" frameX="-254" frameY="-268" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0001" x="1571" y="1544" width="522" height="572" frameX="-241" frameY="-198" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0002" x="1028" y="1544" width="543" height="614" frameX="-231" frameY="-156" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0003" x="586" y="2185" width="602" height="685" frameX="-194" frameY="-85" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0004" x="3084" y="0" width="464" height="772" frameX="-263" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0005" x="0" y="2185" width="586" height="772" frameX="-204" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0006" x="2056" y="728" width="947" height="725" frameX="-37" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0007" x="0" y="1544" width="1028" height="641" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0008" x="2056" y="0" width="1028" height="728" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0009" x="1028" y="0" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0010" x="1028" y="772" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0011" x="0" y="0" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare_loop0000" x="0" y="772" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+</TextureAtlas>

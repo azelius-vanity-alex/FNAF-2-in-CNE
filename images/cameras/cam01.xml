@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="cam01.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="chica_flash0000" x="0" y="772" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="WBonnie_flash0000" x="0" y="0" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="default_static0000" x="1028" y="0" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="default_flash0000" x="1028" y="772" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+</TextureAtlas>

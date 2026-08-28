@@ -1,0 +1,23 @@
+{
+    "startingAI": {
+        "freddy": 0,
+        "chica": 0,
+        "bonnie": 0,
+        "puppet": 9,
+        "mangle": 5,
+        "balloonboy": 3,
+        "WFreddy": 0,
+        "WBonnie": 0,
+        "WChica": 0,
+        "WFoxy": 7
+    },
+
+    "hours": {
+        "2": {
+            "bonnie": 1,
+            "WFreddy": 3,
+            "WBonnie": 4,
+            "WChica": 4
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="monitor.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="monitor0001" x="2056" y="1433" width="1014" height="74" frameX="-7" frameY="-696" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="monitor0002" x="1028" y="1529" width="1028" height="143" frameX="2" frameY="-627" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="monitor0003" x="0" y="1529" width="1028" height="245" frameX="2" frameY="-525" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="monitor0004" x="2056" y="1073" width="1028" height="360" frameX="2" frameY="-410" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="monitor0005" x="2056" y="593" width="1028" height="480" frameX="2" frameY="-290" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="monitor0006" x="2056" y="0" width="1028" height="593" frameX="2" frameY="-177" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="monitor0007" x="1028" y="772" width="1028" height="688" frameX="2" frameY="-82" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="monitor0008" x="0" y="772" width="1028" height="757" frameX="2" frameY="-13" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="monitor0009" x="1028" y="0" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="monitor0010" x="0" y="0" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+</TextureAtlas>

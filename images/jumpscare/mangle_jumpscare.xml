@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="mangle_jumpscare.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="jumpscare0000" x="0" y="2134" width="380" height="260" frameX="-445" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0001" x="2452" y="1190" width="384" height="270" frameX="-439" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0002" x="2056" y="1190" width="396" height="311" frameX="-415" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0003" x="2354" y="1544" width="533" height="377" frameX="-307" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0004" x="1749" y="1544" width="605" height="428" frameX="-259" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0005" x="1028" y="1544" width="721" height="485" frameX="-185" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0006" x="2056" y="653" width="891" height="537" frameX="-76" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0007" x="0" y="1544" width="1028" height="590" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0008" x="2056" y="0" width="960" height="653" frameX="-66" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0009" x="959" y="772" width="999" height="724" frameX="-27" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0010" x="0" y="772" width="959" height="772" frameX="-67" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0011" x="0" y="0" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare_loop0000" x="1028" y="0" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+</TextureAtlas>

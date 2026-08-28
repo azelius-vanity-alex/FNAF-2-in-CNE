@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="WChica_jumpscare.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="jumpscare0000" x="1284" y="2316" width="578" height="170" frameX="-190" frameY="-600" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0001" x="677" y="2316" width="607" height="189" frameX="-174" frameY="-581" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0002" x="0" y="2316" width="677" height="274" frameX="-133" frameY="-496" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0003" x="1718" y="1544" width="810" height="614" frameX="-117" frameY="-156" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0004" x="0" y="0" width="972" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0005" x="1931" y="0" width="944" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare_loop0000" x="972" y="0" width="959" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare_loop0001" x="959" y="772" width="949" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare_loop0002" x="0" y="772" width="959" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare_loop0003" x="1931" y="772" width="862" height="772" frameX="-110" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare_loop0004" x="862" y="1544" width="856" height="772" frameX="-118" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare_loop0005" x="0" y="1544" width="862" height="772" frameX="-110" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="4550000" x="862" y="1544" width="856" height="772" frameX="-118" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="4540000" x="1931" y="772" width="862" height="772" frameX="-110" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="4530000" x="0" y="772" width="959" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="4520000" x="959" y="772" width="949" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="4570000" x="972" y="0" width="959" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+</TextureAtlas>

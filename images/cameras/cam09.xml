@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="cam09.png">
+	<SubTexture name="default_static0000" x="1604" y="0" width="1604" height="772" frameX="2" frameY="2" frameWidth="1600" frameHeight="768"/>
+	<SubTexture name="freddychica_flash0000" x="0" y="2316" width="1604" height="772" frameX="2" frameY="2" frameWidth="1600" frameHeight="768"/>
+	<SubTexture name="freddychica_static0000" x="0" y="1544" width="1604" height="772" frameX="2" frameY="2" frameWidth="1600" frameHeight="768"/>
+	<SubTexture name="freddy_static0000" x="0" y="772" width="1604" height="772" frameX="2" frameY="2" frameWidth="1600" frameHeight="768"/>
+	<SubTexture name="freddy_flash0000" x="1604" y="772" width="1604" height="772" frameX="2" frameY="2" frameWidth="1600" frameHeight="768"/>
+	<SubTexture name="freddychicabonnie_flash0000" x="1604" y="1544" width="1604" height="772" frameX="2" frameY="2" frameWidth="1600" frameHeight="768"/>
+	<SubTexture name="freddychicabonnie_static0000" x="0" y="0" width="1604" height="772" frameX="2" frameY="2" frameWidth="1600" frameHeight="768"/>
+</TextureAtlas>

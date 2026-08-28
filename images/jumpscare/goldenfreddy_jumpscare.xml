@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="goldenfreddy_jumpscare.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="jumpscare0000" x="1394" y="1544" width="258" height="340" frameX="-364" frameY="-183" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0001" x="1115" y="1544" width="279" height="367" frameX="-352" frameY="-167" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0002" x="814" y="1544" width="301" height="397" frameX="-339" frameY="-149" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0003" x="453" y="1544" width="361" height="477" frameX="-304" frameY="-101" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0004" x="1628" y="772" width="402" height="532" frameX="-280" frameY="-69" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0005" x="0" y="1544" width="453" height="601" frameX="-251" frameY="-27" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0006" x="2056" y="711" width="518" height="664" frameX="-213" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0007" x="2056" y="0" width="605" height="711" frameX="-163" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0008" x="898" y="772" width="730" height="772" frameX="-89" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0009" x="0" y="772" width="898" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare0010" x="1028" y="0" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="jumpscare_loop0000" x="0" y="0" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+</TextureAtlas>

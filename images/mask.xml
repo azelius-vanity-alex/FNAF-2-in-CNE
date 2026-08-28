@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="mask.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="mask0001" x="2056" y="1401" width="712" height="60" frameX="-164" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="mask0002" x="2056" y="1188" width="1028" height="213" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="mask0003" x="0" y="1544" width="1028" height="378" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="mask0004" x="2056" y="658" width="1028" height="530" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="mask0005" x="2056" y="0" width="1028" height="658" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="mask0006" x="1028" y="772" width="1028" height="766" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="mask0007" x="0" y="0" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="mask0008" x="1028" y="0" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+	<SubTexture name="mask0009" x="0" y="772" width="1028" height="772" frameX="2" frameY="2" frameWidth="1024" frameHeight="768"/>
+</TextureAtlas>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="camBtn.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="gray0000" x="0" y="0" width="63" height="44" frameX="1" frameY="2" frameWidth="60" frameHeight="40"/>
+	<SubTexture name="green0000" x="63" y="0" width="63" height="44" frameX="1" frameY="2" frameWidth="60" frameHeight="40"/>
+</TextureAtlas>
