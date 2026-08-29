@@ -142,6 +142,14 @@ class CameraMap
         if (windUpBox == null)
             return;
 
+        if (cameraSystem.animManager.puppetHasLeftBox)
+        {
+            musicBoxWarningHUDState = 0;
+            FlxFlicker.stopFlickering(musicBoxWarningHUD);
+            musicBoxWarningHUD.visible = false;
+            return;
+        }
+
         if (enabled)
         {
             if (musicBoxWarningHUDState != 0)
@@ -206,6 +214,15 @@ class CameraMap
     {
         if (windUpBox == null)
             return;
+
+        if (cameraSystem.animManager.puppetHasLeftBox)
+        {
+            musicBoxWarningState = 0;
+            musicBoxFlickering = false;
+            FlxFlicker.stopFlickering(musicBoxWarning);
+            musicBoxWarning.visible = false;
+            return;
+        }
 
         if (!enabled)
         {

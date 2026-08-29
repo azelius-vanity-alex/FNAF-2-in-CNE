@@ -8,5 +8,5 @@
 	<SubTexture name="WChicaWFreddy_flash0000" x="0" y="1544" width="1604" height="772" frameX="2" frameY="2" frameWidth="1600" frameHeight="768"/>
 	<SubTexture name="WFreddy_flash0000" x="0" y="772" width="1604" height="772" frameX="2" frameY="2" frameWidth="1600" frameHeight="768"/>
 	<SubTexture name="default_static0000" x="1604" y="0" width="1604" height="772" frameX="2" frameY="2" frameWidth="1600" frameHeight="768"/>
-	<SubTexture name="WChicaWFoxyWBonnieWFreddy_flash0000" x="1604" y="772" width="1604" height="772" frameX="2" frameY="2" frameWidth="1600" frameHeight="768"/>
+	<SubTexture name="WChicaWBonnieWFreddy_flash0000" x="1604" y="772" width="1604" height="772" frameX="2" frameY="2" frameWidth="1600" frameHeight="768"/>
 </TextureAtlas>
