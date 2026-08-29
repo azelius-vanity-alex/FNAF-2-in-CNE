@@ -32,12 +32,14 @@ class AnimatronicManager
 
     // withered foxy
     var witheredFoxyD:Float = 0;
+    var witheredFoxyDOffset:Float = 0; // clickteam quirk lmfao
     var witheredFoxyDTimer:Float = 0;
     var witheredFoxyFlashCounter:Float = 0;
     var witheredFoxyFlashTimer:Float = 0;
-    var witheredFoxyAttackCounter:Float = 50;
+
     var witheredFoxyAttackTimer:Float = 0;
     var foxyCanKill:Bool = false;
+    var foxyTenSecondKill:Bool = false;
 
     // toy bonnie
     var toyBonnieBlackoutTimer:Float = 0;
@@ -115,6 +117,10 @@ class AnimatronicManager
 
     public function setBlackout(state:Bool)
     {
+        if (state && !blackoutActive)
+        {
+            witheredFoxyDOffset += 1.0 / 60.0;
+        }
         blackoutActive = state;
         if (!state)
         {
@@ -133,7 +139,6 @@ class AnimatronicManager
     {
         cameraSystem = system;
     }
-
     
     public function getCameraEntities(camera:String):Array<Animatronic>
     {
@@ -376,6 +381,9 @@ class AnimatronicManager
     {
         for (anim in animatronics)
         {
+            if (anim.name == 'WFoxy')
+                continue;
+
             if (anim.cameraAttackReady())
             {
                 if (anim.cameraAttackTimer >= 10)
@@ -387,6 +395,9 @@ class AnimatronicManager
 
         for (anim in animatronics)
         {
+            if (anim.name == 'WFoxy')
+                continue;
+
             if (anim.cameraAttackReady())
             {
                 anim.cameraAttackTimer = 0;
@@ -450,23 +461,6 @@ class AnimatronicManager
 
         if (currentOfficeAttacker == anim)
             currentOfficeAttacker = null;
-    }
-
-    public function resetWitheredFoxyCounter()
-    {
-        witheredFoxyAttackCounter = 50;
-        witheredFoxyAttackTimer = 0;
-    }
-
-    public function decreaseWitheredFoxyDih() // im sorry ok
-    {
-        if (witheredFoxyD > 0)
-        {
-            witheredFoxyD -= 1;
-
-            if (witheredFoxyD < 0)
-                witheredFoxyD = 0;
-        }
     }
 
     public function updateVentTimers(elapsed:Float, maskOn:Bool, monitorOpen:Bool)
@@ -548,19 +542,27 @@ class AnimatronicManager
         FlxG.sound.play(Paths.soundRandom('walk', 1, 5), volume, false);
     }
 
-    public function flashWitheredFoxy(currentNight:Int)
+    public function flashWitheredFoxy(currentNight:Int):Animatronic
     {
         for (anim in animatronics)
         {
-            if (anim.name == 'WFoxy' && anim.camera == 'hallway1')
+            if (anim.name != 'WFoxy' || anim.camera != 'hallway1')
+                continue;
+
+            if (foxyCanKill)
             {
-                witheredFoxyFlashCounter++;
-                witheredFoxyD = 0;
-                resetWitheredFoxyCounter();
-                anim.stun(50 / 60);
-                break;
+                foxyCanKill = false;
+                witheredFoxyAttackTimer = 0;
+                return anim;
             }
+
+            witheredFoxyD = 0;
+            witheredFoxyFlashCounter++;
+
+            anim.stun(50 / 60);
         }
+
+        return null;
     }
 
     function updateToyBonnieBlackout(elapsed:Float, maskOn:Bool)
@@ -687,17 +689,6 @@ class AnimatronicManager
         }
     }
 
-    function puppetStageTransition()
-    {
-        if (cameraSystem == null)
-            return;
-
-        if (cameraSystem.currentCamera != 'cam11')
-            return;
-
-        cameraSystem.playPuppetStageTransition();
-    }
-
     function updatePuppetBuildingPath(elapsed:Float)
     {
         if (!puppetHasLeftBox)
@@ -748,6 +739,33 @@ class AnimatronicManager
 
     public function update(elapsed:Float, flash:Bool, maskOn:Bool, rightVentLightOn:Bool)
     {
+        foxyTenSecondKill = false;
+        var foxyInHallway:Bool = false;
+
+        for (anim in animatronics)
+        {
+            if (anim.name == 'WFoxy' && anim.camera == 'hallway1')
+                foxyInHallway = true;
+        }
+
+        if (foxyCanKill && foxyInHallway && !blackoutActive)
+        {
+            witheredFoxyAttackTimer += elapsed;
+
+            if (witheredFoxyAttackTimer >= 10)
+            {
+                witheredFoxyAttackTimer = 0;
+                foxyCanKill = false;
+                foxyTenSecondKill = true;
+            }
+        }
+        else if (!blackoutActive)
+        {
+            witheredFoxyAttackTimer = 0;
+        }
+
+        trace('Withered Foxy Attack Timer :' + witheredFoxyAttackTimer + ' Withered Foxy D Timer:' + witheredFoxyDTimer);
+
         for (anim in animatronics)
         {
             anim.update(elapsed, cameraSystem != null && cameraSystem.monitorOpen);
@@ -755,11 +773,13 @@ class AnimatronicManager
 
         for (anim in animatronics)
         {
-            if (anim.name == 'WFoxy' && anim.camera == 'hallway1' && witheredFoxyFlashCounter >= 100 * nightNumber && !anim.stunned)
+            if (anim.name == 'WFoxy' && anim.camera == 'hallway1' && witheredFoxyFlashCounter > 100 * nightNumber && !anim.stunned)
             {
+                foxyCanKill = false;
+                foxyTenSecondKill = false;
+                witheredFoxyAttackTimer = 0;
                 witheredFoxyD = 0;
                 witheredFoxyFlashCounter = 0;
-                witheredFoxyAttackCounter = 50;
 
                 anim.moveTo('cam08');
 
@@ -795,38 +815,8 @@ class AnimatronicManager
 
         if (blackoutActive)
             return;
-
+        
         updateToyBonnieBlackout(elapsed, maskOn);
-
-        var foxyInHallway:Bool = false;
-
-        for (anim in animatronics)
-        {
-            if (anim.name == 'WFoxy' && anim.camera == 'hallway1')
-            {
-                foxyInHallway = true;
-                break;
-            }
-        }
-
-        if (foxyInHallway)
-        {
-            witheredFoxyAttackTimer += elapsed;
-
-            if (witheredFoxyAttackTimer >= 1)
-            {
-                witheredFoxyAttackTimer -= 1;
-
-                witheredFoxyAttackCounter--;
-
-                if (witheredFoxyAttackCounter < 0)
-                    witheredFoxyAttackCounter = 0;
-            }
-        }
-        else
-        {
-            witheredFoxyAttackTimer = 0;
-        }
 
         if (nightNumber == 1)
         {
@@ -835,27 +825,49 @@ class AnimatronicManager
         }
         else
         {
+            if (flash && foxyInHallway)
+            {
+                witheredFoxyD = 0;
+            }
+
             witheredFoxyDTimer += elapsed;
 
-            if (witheredFoxyDTimer >= 1)
-            {   
-                witheredFoxyDTimer -= 1;
+            var dInterval:Float = Math.max(1.0 / 60.0, 1.0 - witheredFoxyDOffset);
 
-                if (flash)
+            if (witheredFoxyDTimer >= dInterval)
+            {   
+                witheredFoxyDTimer -= dInterval;
+
+                if (!flash)
                 {
-                    if (foxyInHallway)
-                    {
-                        witheredFoxyD = 0;
-                    }
-                }
-                else
-                {
-                    if (maskOn)
+                    if (maskOn && !anyAnimatronicInOffice())
                         witheredFoxyD += 2;
                     else
                         witheredFoxyD += 1;
                 }
             }
+        }
+
+       if (!foxyInHallway && flash)
+        {
+            witheredFoxyFlashTimer += elapsed;
+
+            if (witheredFoxyFlashTimer >= 0.5)
+            {
+                witheredFoxyFlashTimer -= 0.5;
+
+                if (witheredFoxyD > 0)
+                {
+                    witheredFoxyD -= 1;
+
+                    if (witheredFoxyD < 0)
+                        witheredFoxyD = 0;
+                }
+            }
+        }
+        else
+        {
+            witheredFoxyFlashTimer = 0;
         }
 
         if (nightNumber == 2 && hour == 12)
@@ -955,23 +967,6 @@ class AnimatronicManager
         if (cameraSystem != null)
             previousMonitorOpen = cameraSystem.monitorOpen;
 
-        if (!foxyInHallway && flash)
-        {
-            witheredFoxyFlashTimer += elapsed;
-
-            if (witheredFoxyFlashTimer >= 2)
-            {
-                witheredFoxyFlashTimer -= 2;
-
-                if (witheredFoxyD > 0)
-                    witheredFoxyD -= 1;
-            }
-        }
-        else
-        {
-            witheredFoxyFlashTimer = 0;
-        }
-
         moveTimer += elapsed;
 
         if (moveTimer < movementInterval)
@@ -1013,14 +1008,8 @@ class AnimatronicManager
             }  
             else if (anim.name == 'WFoxy')
             {  
-                var foxyRoll = (21 + FlxG.random.int(1, 4)) - Std.int(witheredFoxyD);
-
-                getsMovementOpportunity = foxyRoll <= anim.getCappedAI();
-
-                if (getsMovementOpportunity)
-                {
-                    witheredFoxyD = 0;
-                }
+                var foxyRoll:Float = 21 + FlxG.random.int(0, 4) - witheredFoxyD;
+                getsMovementOpportunity = foxyRoll < anim.getCappedAI();
             }
             else
             {
@@ -1055,12 +1044,8 @@ class AnimatronicManager
 
             if (anim.name == 'WFoxy' && anim.camera == 'hallway1')
             {
-                if (witheredFoxyAttackCounter <= 0)
-                {
-                    foxyCanKill = true;
-                    continue;
-                }
-
+                foxyCanKill = true;
+                witheredFoxyAttackTimer = 0;
                 continue;
             }
    
@@ -1071,12 +1056,14 @@ class AnimatronicManager
                     getsMovementOpportunity = false;
                     continue;
                 }
+
                 var oldCamera = anim.camera;
 
                 anim.moveTo('hallway1');
 
+                foxyCanKill = false;
+                foxyTenSecondKill = false;
                 witheredFoxyD = 0;
-                witheredFoxyAttackCounter = 50;
                 witheredFoxyAttackTimer = 0;
 
                 if (cameraSystem != null && cameraSystem.monitorOpen)

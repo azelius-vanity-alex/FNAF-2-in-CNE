@@ -59,6 +59,7 @@ class FreddyMask
         isOn = false;
 
         sprite.animation.play('up');
+        sprite.screenCenter();
 
         sprite.animation.finishCallback = function(name:String)
         {

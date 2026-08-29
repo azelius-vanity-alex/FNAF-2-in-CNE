@@ -366,6 +366,7 @@ function create()
     add(rightVent.light);
 
     toyBonnieOverlay = new FunkinSprite(1500, -80, Paths.image('office/toybonnie'));
+    toyBonnieOverlay.antialiasing = true;
     toyBonnieOverlay.visible = false;
     add(toyBonnieOverlay);
 
@@ -1648,6 +1649,18 @@ function update(elapsed:Float)
         }
     }
 
+    if (animManager.foxyTenSecondKill)
+    {
+        for (anim in animManager.animatronics)
+        {
+            if (anim.name == 'WFoxy')
+            {
+                triggerDeath(anim);
+                dropCameras();
+            }
+        }
+    }
+
     var mousePos = FlxG.mouse.getWorldPosition(camWorld);
     var mousePosHUD = FlxG.mouse.getWorldPosition(camHUD);
 
@@ -1765,15 +1778,6 @@ function update(elapsed:Float)
     }
     else if (hallwayLight)
     {
-        for (anim in animManager.animatronics)
-        {
-            if (anim.name == 'WFoxy' && anim.camera == 'hallway1')
-            {
-                animManager.decreaseWitheredFoxyDih();
-                break;
-            }
-        }
-
         if (shadowBonnieAppear)
         {
             FlxTween.tween(shadowBonnie, {alpha: 0}, 1.13, {
