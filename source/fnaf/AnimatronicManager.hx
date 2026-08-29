@@ -764,8 +764,6 @@ class AnimatronicManager
             witheredFoxyAttackTimer = 0;
         }
 
-        trace('Withered Foxy Attack Timer :' + witheredFoxyAttackTimer + ' Withered Foxy D Timer:' + witheredFoxyDTimer);
-
         for (anim in animatronics)
         {
             anim.update(elapsed, cameraSystem != null && cameraSystem.monitorOpen);
