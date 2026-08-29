@@ -806,14 +806,6 @@ class CameraSystem
             }
         }
 
-        if (currentCamera == 'cam08' && secretFreddyActive && monitorOpen)
-            secretFreddyTimer += elapsed;
-        else 
-            secretFreddyTimer = 0;
-
-        if (secretFreddyTimer >= 4)
-            lime.system.System.exit(1);
-
         camLine1.y += 0.6;
         if (camLine1.y > FlxG.height + 35) camLine1.y = -35;
 
