@@ -792,9 +792,9 @@ function dropCameras()
 
     if (!dying)
     {
-        maskButton.sprite.visible = true;
-        cameraButton.sprite.visible = true;
-        hideCameraButtonsUntilLeave = false;
+        maskButton.sprite.visible = false;
+        cameraButton.sprite.visible = false;
+        hideCameraButtonsUntilLeave = true;
     }
 
     return true;
