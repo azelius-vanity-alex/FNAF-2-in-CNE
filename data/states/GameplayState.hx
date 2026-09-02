@@ -1559,17 +1559,6 @@ function update(elapsed:Float)
     if (updateNightTime(elapsed))
         return;
 
-    if (FlxG.keys.justPressed.B)
-    {
-        for (anim in animManager.animatronics)
-        {
-            if (anim.name == 'WFoxy')
-            {
-                triggerDeath(anim);
-            }
-        }
-    }
-
     flashlight.update(FlxG.keys.pressed.CONTROL && !maskOn && !blackoutActive, elapsed);
 
     var flash = FlxG.keys.pressed.CONTROL && !blackoutActive && !maskOn && monitor.isOpen && flashlight.battery > 0;
