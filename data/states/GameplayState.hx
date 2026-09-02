@@ -720,7 +720,7 @@ function pullMaskUp()
     checkPendingJumpscare();
 }
 
-function dropCameras()
+function dropCameras(forced:Bool = false)
 {
     if (!monitor.isOpen)
         return false;
@@ -790,7 +790,13 @@ function dropCameras()
 
     checkPendingJumpscare();
 
-    if (!dying)
+    if (forced)
+    {
+        maskButton.sprite.visible = true;
+        cameraButton.sprite.visible = true;
+        hideCameraButtonsUntilLeave = false;
+    }
+    else if (!dying)
     {
         maskButton.sprite.visible = false;
         cameraButton.sprite.visible = false;
@@ -1157,7 +1163,7 @@ function updateCamAttackTimer(elapsed:Float)
         cameraAttackTimer -= 10;
 
         if (hasPendingAttack() && monitor.isOpen && !openingCams)
-            dropCameras();
+            dropCameras(true);
     }
 }
 
