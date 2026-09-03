@@ -60,6 +60,7 @@ class CameraSystem
     
     public var currentState:String = 'static';
     var cameraLayer:FlxCamera;
+    var perspectiveCamera:FlxCamera;
 
     var secretFlashActive:Bool = false;
     var secretFreddyActive:Bool = false;
@@ -176,7 +177,6 @@ class CameraSystem
         {
             i.alpha = 0.1;
             i.blend = 0;
-            i.shader = new CustomShader('perspective');
         }   
 
         cameraBlip.screenCenter();
@@ -191,6 +191,17 @@ class CameraSystem
         cameraHUD.push(signalInterruptedSprite);
         for (i in [camLine1, camLine2, camLine3])
             cameraHUD.push(i);
+
+        perspectiveCamera = new FlxCamera();
+        perspectiveCamera.bgColor = 0x00000000;
+
+        FlxG.cameras.add(perspectiveCamera, false);
+
+        camLine1.camera = perspectiveCamera;
+        camLine2.camera = perspectiveCamera;
+        camLine3.camera = perspectiveCamera;
+
+        perspectiveCamera.addShader(new CustomShader('perspective'));
     }
 
     public function setWindUpBox(box:WindUpBox)
@@ -321,17 +332,26 @@ class CameraSystem
 
         for (sprite in cameraHUD)
         {
-            if (sprite == cameraBlip)
+            if (sprite == cameraBlip || sprite == camLine1 || sprite == camLine2 || sprite == camLine3)
                 continue;
 
             state.add(sprite);
         }
+
+        state.add(camLine1);
+        state.add(camLine2);
+        state.add(camLine3);
     }
 
     public function setHUDCamera(cam:FlxCamera)
     {
         for (sprite in cameraHUD)
+        {
+            if (sprite == camLine1 || sprite == camLine2 || sprite == camLine3)
+                continue;
+
             sprite.camera = cam;
+        }
     }
 
     public function isCameraUnscrollable():Bool
