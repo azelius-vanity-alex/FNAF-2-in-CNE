@@ -195,8 +195,6 @@ class CameraSystem
         perspectiveCamera = new FlxCamera();
         perspectiveCamera.bgColor = 0x00000000;
 
-        FlxG.cameras.add(perspectiveCamera, false);
-
         camLine1.camera = perspectiveCamera;
         camLine2.camera = perspectiveCamera;
         camLine3.camera = perspectiveCamera;
@@ -302,12 +300,6 @@ class CameraSystem
 
     var paperpalMoved:Bool = false;
 
-    public function setPaperpalMoved(value:Bool)
-    {
-        paperpalMoved = value;
-        updateCameraAnimation();
-    }
-
     function isCustomNightBlockedCamera(id:String):Bool
     {
         return customNight && customNightBlockedCameras.contains(id);
@@ -330,6 +322,10 @@ class CameraSystem
 
         state.add(mangleOverlay);
 
+        state.add(camLine1);
+        state.add(camLine2);
+        state.add(camLine3);
+
         for (sprite in cameraHUD)
         {
             if (sprite == cameraBlip || sprite == camLine1 || sprite == camLine2 || sprite == camLine3)
@@ -337,10 +333,6 @@ class CameraSystem
 
             state.add(sprite);
         }
-
-        state.add(camLine1);
-        state.add(camLine2);
-        state.add(camLine3);
     }
 
     public function setHUDCamera(cam:FlxCamera)

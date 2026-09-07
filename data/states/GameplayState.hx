@@ -239,9 +239,10 @@ function create()
     camMonitor.bgColor = 0x000000;
     FlxG.cameras.add(camMonitor);
 
+    
+
     camHUD = new FlxCamera();
     camHUD.bgColor = 0x000000;
-    FlxG.cameras.add(camHUD);
 
     FlxCamera.defaultCameras = [camWorld];
 
@@ -276,6 +277,9 @@ function create()
     cameraSystem.setHUDCamera(camHUD);
     cameraSystem.setVisible(false);
     cameraSystem.setHUDVisible(false);
+
+    FlxG.cameras.add(cameraSystem.perspectiveCamera, false); // lmaooo
+    FlxG.cameras.add(camHUD);
 
     for (name in aiNames)
     {
@@ -877,7 +881,6 @@ function updateBlackout(elapsed:Float)
         }
     }
 
-    /*
     if (blackoutMaskChanceActive && maskOn && !dying)
     {
         blackoutMaskChanceTimer += elapsed;
@@ -901,7 +904,7 @@ function updateBlackout(elapsed:Float)
                 pendingJumpscare = false;
             }
         }
-    }*/
+    }
 
     blackOutProgress += elapsed * 60;
 
