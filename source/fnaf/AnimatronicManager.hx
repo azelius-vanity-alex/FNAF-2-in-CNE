@@ -737,6 +737,43 @@ class AnimatronicManager
         }
     }
 
+    function canAnimatronicLeave(anim:Animatronic):Bool
+    {
+        if (anim.camera == 'cam09')
+        {   
+            switch (anim.name)
+            {
+                case 'chica':
+                    for (other in animatronics)
+                    {
+                        if (other.name == 'bonnie')
+                            return other.camera != 'cam09';
+                    }
+
+                case 'freddy':
+                    for (other in animatronics)
+                    {
+                        if (other.name == 'chica')
+                            return other.camera != 'cam09';
+                    }
+            }
+        }
+
+        if (anim.name == 'WFreddy' && anim.camera == 'cam08')
+        {
+            for (other in animatronics)
+            {
+                if (other.name == 'WChica' && other.camera == 'cam08')
+                    return false;
+
+                if (other.name == 'WBonnie' && other.camera == 'cam08')
+                    return false;
+            }
+        }
+
+        return true;
+    }
+
     public function update(elapsed:Float, flash:Bool, maskOn:Bool, rightVentLightOn:Bool)
     {
         foxyTenSecondKill = false;
@@ -1011,24 +1048,7 @@ class AnimatronicManager
             }
             else
             {
-                if (nightNumber == 1 && !firstMovementDone)
-                {
-                    if (anim.name == 'bonnie')
-                    {
-                        getsMovementOpportunity = anim.tryMove();
-
-                        if (getsMovementOpportunity)
-                            firstMovementDone = true;
-                    }
-                    else
-                    {
-                        getsMovementOpportunity = false;
-                    }
-                }
-                else
-                {
-                    getsMovementOpportunity = anim.tryMove();
-                }
+                getsMovementOpportunity = canAnimatronicLeave(anim) && anim.tryMove();
             }
 
             if (!getsMovementOpportunity)
