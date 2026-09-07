@@ -739,6 +739,9 @@ class AnimatronicManager
 
     function canAnimatronicLeave(anim:Animatronic):Bool
     {
+        if (nightNumber == 7)
+            return true;
+
         if (anim.camera == 'cam09')
         {    
             switch (anim.name)
