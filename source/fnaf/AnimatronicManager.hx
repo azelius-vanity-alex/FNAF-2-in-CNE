@@ -740,7 +740,7 @@ class AnimatronicManager
     function canAnimatronicLeave(anim:Animatronic):Bool
     {
         if (anim.camera == 'cam09')
-        {   
+        {    
             switch (anim.name)
             {
                 case 'chica':
@@ -759,15 +759,21 @@ class AnimatronicManager
             }
         }
 
+        if (anim.name == 'WChica' && anim.camera == 'cam08')
+        {
+            for (other in animatronics)
+            {   
+                if (other.name == 'WBonnie')
+                    return other.camera != 'cam08';
+            }
+        }
+
         if (anim.name == 'WFreddy' && anim.camera == 'cam08')
         {
             for (other in animatronics)
             {
-                if (other.name == 'WChica' && other.camera == 'cam08')
-                    return false;
-
-                if (other.name == 'WBonnie' && other.camera == 'cam08')
-                    return false;
+                if (other.name == 'WChica')
+                    return other.camera != 'cam08';
             }
         }
 
