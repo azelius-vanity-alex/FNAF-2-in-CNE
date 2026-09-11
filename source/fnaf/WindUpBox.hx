@@ -84,17 +84,12 @@ class WindUpBox
     {
         if (sprite.visible)
         {
-            if (isMouseOver() && FlxG.mouse.justPressed)
-            {
-                pressed = true;
-                sprite.animation.play('green', true);
-            }   
+            pressed = FlxG.mouse.pressed && isMouseOver();
 
-            if (FlxG.mouse.justReleased)
-            {
-                pressed = false;
+            if (pressed)
+                sprite.animation.play('green', true);
+            else
                 sprite.animation.play('gray', true);
-            }
         }
 
         if (pressed)

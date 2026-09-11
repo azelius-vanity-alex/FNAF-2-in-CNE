@@ -1568,7 +1568,7 @@ function update(elapsed:Float)
     var hallwayLight = FlxG.keys.pressed.CONTROL && !blackoutActive && !maskOn && !monitor.isOpen && flashlight.battery > 0;
 
     var flashlightInputActive = FlxG.keys.pressed.CONTROL && !blackoutActive && !maskOn;
-    var ventInputActive = heldVent != null;
+    var ventInputActive = heldVent != null && FlxG.mouse.pressed && heldVent.isMouseOver(camWorld) && !bbInOffice;
 
     var lightInputActive = flashlightInputActive || ventInputActive;
     var lightActive = lightInputActive && flashlight.battery > 0;
@@ -1738,62 +1738,60 @@ function update(elapsed:Float)
         if (leftVent.isMouseOver(camWorld))
         {
             ventInputAttempted = true;
-
-            if (!bbInOffice)
-            {
-                heldVent = leftVent;
-                leftVent.turnOn();
-            }
+            heldVent = leftVent;
         }
         else if (rightVent.isMouseOver(camWorld))
         {
             ventInputAttempted = true;
-
-            if (!bbInOffice)
-            {
-                heldVent = rightVent;
-                rightVent.turnOn();
-            }
-        }
-    }
-
-    if (FlxG.mouse.justReleased)
-    {
-        if (heldVent != null)
-        {
-            heldVent.turnOff();
-            heldVent = null;
+            heldVent = rightVent;
         }
     }
 
     if (heldVent != null)
-    {        
-        if (heldVent == leftVent)
-            currentOfficeView = 'leftVent';
-
-        else if (heldVent == rightVent)
-            currentOfficeView = 'rightVent';
-    }
-    else if (hallwayLight)
     {
-        if (shadowBonnieAppear)
+        if (!FlxG.mouse.pressed)
         {
-            FlxTween.tween(shadowBonnie, {alpha: 0}, 1.13, {
-                onComplete: function()
-                {
-                    shadowBonnieAppear = false;
-                    shadowBonnie.visible = false;
-                }
-            });
+            heldVent.turnOff();
+            heldVent = null;
         }
+        else
+        {
+            var overVent = heldVent.isMouseOver(camWorld);
 
-        animManager.stunHallwayAnimatronics();
-        currentOfficeView = 'hallway';
+            if (overVent && !bbInOffice)
+                heldVent.turnOn();
+            else
+                heldVent.turnOff();
+        }
     }
-    else
+
+    if (heldVent != null && FlxG.mouse.pressed && heldVent.isMouseOver(camWorld) && !bbInOffice)
+{
+    if (heldVent == leftVent)
+        currentOfficeView = 'leftVent';
+    else if (heldVent == rightVent)
+        currentOfficeView = 'rightVent';
+}
+else if (hallwayLight)
+{
+    if (shadowBonnieAppear)
     {
-        currentOfficeView = 'normal';
+        FlxTween.tween(shadowBonnie, {alpha: 0}, 1.13, {
+            onComplete: function()
+            {
+                shadowBonnieAppear = false;
+                shadowBonnie.visible = false;
+            }
+        });
     }
+
+    animManager.stunHallwayAnimatronics();
+    currentOfficeView = 'hallway';
+}
+else
+{
+    currentOfficeView = 'normal';
+}
 
     if (hallwayLight)
     {
