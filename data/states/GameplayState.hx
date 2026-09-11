@@ -1766,32 +1766,32 @@ function update(elapsed:Float)
     }
 
     if (heldVent != null && FlxG.mouse.pressed && heldVent.isMouseOver(camWorld) && !bbInOffice)
-{
-    if (heldVent == leftVent)
-        currentOfficeView = 'leftVent';
-    else if (heldVent == rightVent)
-        currentOfficeView = 'rightVent';
-}
-else if (hallwayLight)
-{
-    if (shadowBonnieAppear)
     {
-        FlxTween.tween(shadowBonnie, {alpha: 0}, 1.13, {
-            onComplete: function()
-            {
-                shadowBonnieAppear = false;
-                shadowBonnie.visible = false;
-            }
-        });
+        if (heldVent == leftVent)
+            currentOfficeView = 'leftVent';
+        else if (heldVent == rightVent)
+            currentOfficeView = 'rightVent';
     }
+    else if (hallwayLight)
+    {
+        if (shadowBonnieAppear)
+        {
+            FlxTween.tween(shadowBonnie, {alpha: 0}, 1.13, {
+                onComplete: function()
+                {
+                    shadowBonnieAppear = false;
+                    shadowBonnie.visible = false;
+                }
+            });
+        }
 
-    animManager.stunHallwayAnimatronics();
-    currentOfficeView = 'hallway';
-}
-else
-{
-    currentOfficeView = 'normal';
-}
+        animManager.stunHallwayAnimatronics();
+        currentOfficeView = 'hallway';
+    }
+    else
+    {
+        currentOfficeView = 'normal';
+    }
 
     if (hallwayLight)
     {
