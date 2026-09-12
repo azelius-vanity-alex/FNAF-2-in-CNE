@@ -122,7 +122,7 @@ class Office extends FunkinSprite
         desk = new FunkinSprite(268, 332);
         desk.frames = Paths.getSparrowAtlas('office/desk');
 
-        desk.animation.addByPrefix('idle', 'desk', 30, true);
+        desk.animation.addByPrefix('idle', 'desk', 60, true);
         desk.animation.play('idle');
 
         paperpal = new FunkinSprite(724, 130, Paths.image('office/paperpal'));
