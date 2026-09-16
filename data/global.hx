@@ -46,8 +46,8 @@ function update()
 {
     // originally it was f2 to match clickteam's restart shit
     // but f2 was already keybinded to opening console
-    // so now its f4 lmaoo
-    if (FlxG.keys.justPressed.F4)
+    // so now its f6 lmaoo
+    if (FlxG.keys.justPressed.F6)
     {
         FlxG.sound?.music?.stop();
         FlxG.switchState(new ModState("WarningStateFNAF"));
