@@ -37,7 +37,6 @@ function create()
     cameraBlip.frames = Paths.getSparrowAtlas('camBlip');
     cameraBlip.animation.addByPrefix('blip', 'frame', 24, false);
     cameraBlip.animation.play('blip', true);
-    add(cameraBlip);
 
     cameraBlip.animation.finishCallback = function(name:String)
     {
@@ -50,6 +49,7 @@ function create()
     nightDisplay = new FunkinSprite(395, 316, Paths.image('title/night/' + nightNumber));
     nightDisplay.antialiasing = true;
     add(nightDisplay);
+    add(cameraBlip);
 
     new FlxTimer().start(2, function()
     {

@@ -1590,9 +1590,6 @@ function update(elapsed:Float)
 
     updateHallwayAmbience();
 
-    leftVent.update(elapsed);
-    rightVent.update(elapsed);
-
     cameraButton.update(elapsed, camHUD);
     maskButton.update(elapsed, camHUD);
 

@@ -5,15 +5,6 @@ class VentLight
 
     public var light:FunkinSprite;
 
-    public static function precache()
-    {
-        for (side in ["left", "right"])
-        {
-            PlayState.instance.graphicCache.cache(Paths.image('office/ventlight/${side}_off'));
-            PlayState.instance.graphicCache.cache(Paths.image('office/ventlight/${side}_on'));
-        }
-    }
-
     public function new(side:String)
     {
         this.side = side;
@@ -58,6 +49,4 @@ class VentLight
 
     public function isMouseOver(cam:FlxCamera):Bool
         return light.overlapsPoint(FlxG.mouse.getWorldPosition(cam));
-        
-    public function update(elapsed:Float) {}
 }
