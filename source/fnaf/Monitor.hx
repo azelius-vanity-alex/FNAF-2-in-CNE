@@ -16,6 +16,7 @@ class Monitor
 
         sprite.animation.addByPrefix('open', 'monitor', 60, false);
         sprite.animation.addByIndices('close', 'monitor', [9,8,7,6,5,4,3,2,1,0], '', 30, false);
+        sprite.antialiasing = true;
 
         sprite.visible = false;
 
@@ -27,14 +28,10 @@ class Monitor
             switch(anim)
             {
                 case 'open':
-                    //isOpen = true;
-
                     if (onOpenFinished != null)
                         onOpenFinished();
 
                 case 'close':
-                    //isOpen = false;
-
                     if (onCloseFinished != null)
                         onCloseFinished();
             }

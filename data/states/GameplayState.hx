@@ -860,24 +860,19 @@ function updateBlackout(elapsed:Float)
     {
         blackoutReactionTimer -= elapsed;
 
-        if (maskOn)
-        {
-            blackoutReactionActive = false;
-        }
-        else if (blackoutReactionTimer <= 0)
+        if (blackoutReactionTimer <= 0)
         {
             blackoutReactionActive = false;
             pendingJumpscare = true;
 
             blackoutRolloutPending = true;
 
-            blackoutMaskChanceActive = true;
-            blackoutMaskChanceTimer = 0;
-
             if (blackoutAnim != null)
-            {
                 blackoutAnim.camera = 'office';
-            }
+        }
+        else if (maskOn)
+        {
+            blackoutReactionActive = false;
         }
     }
 
