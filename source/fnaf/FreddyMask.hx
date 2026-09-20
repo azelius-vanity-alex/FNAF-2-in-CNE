@@ -25,7 +25,7 @@ class FreddyMask
 
         // idfk the fps of the mask i just eyeball it #imcrine
         sprite.animation.addByPrefix('down', 'mask', 40, false);
-        sprite.animation.addByIndices('up', 'mask', [6, 5, 4, 3, 2, 1, 0], '', 40, false);
+        sprite.animation.addByIndices('up', 'mask', [8, 7, 6, 5, 4, 3, 2, 1, 0], '', 40, false);
         sprite.antialiasing = true;
 
         sprite.visible = false;
@@ -76,7 +76,7 @@ class FreddyMask
 
     public function update(elapsed:Float)
     {
-        if (!floating)
+        if (!floating || !isOn)
             return;
 
         floatTime += elapsed * 1.3;

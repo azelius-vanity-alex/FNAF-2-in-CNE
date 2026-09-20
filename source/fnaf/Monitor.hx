@@ -14,7 +14,7 @@ class Monitor
 
         sprite.frames = Paths.getSparrowAtlas('monitor');
 
-        sprite.animation.addByPrefix('open', 'monitor', 50, false);
+        sprite.animation.addByPrefix('open', 'monitor', 60, false);
         sprite.animation.addByIndices('close', 'monitor', [9,8,7,6,5,4,3,2,1,0], '', 30, false);
 
         sprite.visible = false;
