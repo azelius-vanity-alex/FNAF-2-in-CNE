@@ -35,7 +35,7 @@ function create()
 
     cameraBlip = new FunkinSprite();
     cameraBlip.frames = Paths.getSparrowAtlas('camBlip');
-    cameraBlip.animation.addByPrefix('blip', 'frame', 24, false);
+    cameraBlip.animation.addByPrefix('blip', 'frame', 30, false);
     cameraBlip.animation.play('blip', true);
 
     cameraBlip.animation.finishCallback = function(name:String)

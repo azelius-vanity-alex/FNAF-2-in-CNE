@@ -155,7 +155,7 @@ class CameraSystem
 
         cameraBlip = new FunkinSprite();
         cameraBlip.frames = Paths.getSparrowAtlas('camBlip');
-        cameraBlip.animation.addByPrefix('blip', 'frame', 24, false);
+        cameraBlip.animation.addByPrefix('blip', 'frame', 30, false);
 
         staticSound = FlxG.sound.load(Paths.sound('stare'), 0, true);
         staticSound.play();
