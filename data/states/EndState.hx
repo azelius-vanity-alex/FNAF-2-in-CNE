@@ -27,7 +27,7 @@ function create()
         canPressEnter = true;
     });
 
-    new FlxTimer().start(21, function()
+    new FlxTimer().start(20, function()
     {
         fade();
     });

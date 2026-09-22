@@ -146,6 +146,12 @@ class CameraSystem
         camBoxOverlay = new FunkinSprite(0, 0, Paths.image('cameras/camBorderOverlay'));
 
         camName = new FunkinSprite(553, 307);
+        camName.frames = Paths.getSparrowAtlas('cameras/camNames');
+        for (i in 1...13)
+        {
+            var name = i < 10 ? 'cam0$i' : 'cam$i';
+            camName.animation.addByPrefix(name, name, 0, false);
+        }
 
         redButton = new FunkinSprite(49, 96, Paths.image('cameras/redButton'));
         redButton.antialiasing = true;
@@ -356,7 +362,8 @@ class CameraSystem
         if (currentCamera == '')
             return;
 
-        camName.loadGraphic(Paths.image('cameras/camText/' + currentCamera));
+        //camName.loadGraphic(Paths.image('cameras/camText/' + currentCamera));
+        camName.animation.play(currentCamera, true);
     }
 
     public function playPuppetStageTransition()

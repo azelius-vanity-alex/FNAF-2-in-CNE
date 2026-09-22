@@ -280,9 +280,11 @@ function create()
     presetText.text = presetNames[currentPreset];
 
     leftStar = new FunkinSprite(90, 697).loadGraphic(Paths.image('title/star'));
+    leftStar.antialiasing = true;
     add(leftStar);
 
     rightStar = new FunkinSprite(741, 697).loadGraphic(Paths.image('title/star'));
+    rightStar.antialiasing = true;
     add(rightStar);
 
     updateStarVisibility();

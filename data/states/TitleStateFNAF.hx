@@ -116,14 +116,17 @@ function create()
     add(title);
 
     firstStar = new FunkinSprite(94, 341, Paths.image('title/star'));
+    firstStar.antialiasing = true;
     firstStar.visible = SaveData.getBool('night5done');
     add(firstStar);
 
     secondStar = new FunkinSprite(171, 341, Paths.image('title/star'));
+    secondStar.antialiasing = true;
     secondStar.visible = SaveData.getBool('night6done');
     add(secondStar);
 
     thirdStar = new FunkinSprite(246, 341, Paths.image('title/star'));
+    thirdStar.antialiasing = true;
     thirdStar.visible = SaveData.getBool('goldenFreddyDone');
     add(thirdStar);
 

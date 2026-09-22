@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="camNames.png">
+	<!-- Created using the Spritesheet and XML generator -->
+	<!-- https://uncertainprod.github.io/FNF-Spritesheet-XML-generator-Web -->
+	<SubTexture name="cam010000" x="0" y="182" width="227" height="26" frameX="2" frameY="2" frameWidth="223" frameHeight="22"/>
+	<SubTexture name="cam020000" x="0" y="130" width="230" height="26" frameX="2" frameY="2" frameWidth="226" frameHeight="22"/>
+	<SubTexture name="cam030000" x="0" y="104" width="230" height="26" frameX="2" frameY="2" frameWidth="226" frameHeight="22"/>
+	<SubTexture name="cam040000" x="0" y="78" width="230" height="26" frameX="2" frameY="2" frameWidth="226" frameHeight="22"/>
+	<SubTexture name="cam050000" x="0" y="26" width="249" height="26" frameX="2" frameY="2" frameWidth="245" frameHeight="22"/>
+	<SubTexture name="cam060000" x="0" y="0" width="268" height="26" frameX="2" frameY="2" frameWidth="264" frameHeight="22"/>
+	<SubTexture name="cam070000" x="268" y="26" width="170" height="26" frameX="2" frameY="2" frameWidth="166" frameHeight="22"/>
+	<SubTexture name="cam080000" x="0" y="52" width="249" height="26" frameX="2" frameY="2" frameWidth="245" frameHeight="22"/>
+	<SubTexture name="cam090000" x="0" y="234" width="192" height="26" frameX="2" frameY="2" frameWidth="188" frameHeight="22"/>
+	<SubTexture name="cam100000" x="268" y="0" width="173" height="26" frameX="2" frameY="2" frameWidth="169" frameHeight="22"/>
+	<SubTexture name="cam110000" x="0" y="156" width="230" height="26" frameX="2" frameY="2" frameWidth="226" frameHeight="22"/>
+	<SubTexture name="cam120000" x="0" y="208" width="192" height="26" frameX="2" frameY="2" frameWidth="188" frameHeight="22"/>
+</TextureAtlas>

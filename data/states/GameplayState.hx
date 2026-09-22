@@ -239,8 +239,6 @@ function create()
     camMonitor.bgColor = 0x000000;
     FlxG.cameras.add(camMonitor);
 
-    
-
     camHUD = new FlxCamera();
     camHUD.bgColor = 0x000000;
 
