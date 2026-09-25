@@ -70,7 +70,7 @@ function create()
 
     FlxCamera.defaultCameras = [camWorld];
 
-    maskCamera.fade(FlxColor.BLACK, 5, true);
+    maskCamera.fade(FlxColor.BLACK, 15, true);
 
     maskSprite = new FunkinSprite(0, 0, Paths.image('dreamstate/mask'));
     maskSprite.camera = maskCamera;
@@ -86,7 +86,7 @@ function create()
     camStatic.frames = Paths.getSparrowAtlas('ui/static');
     camStatic.alpha = 0.4;
     camStatic.blend = 0;
-    camStatic.animation.addByPrefix('static', 'frame', 49, true);
+    camStatic.animation.addByPrefix('static', 'frame', 60, true);
     camStatic.animation.play('static');
     camStatic.camera = maskCamera;
     camStatic.antialiasing = true;
