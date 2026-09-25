@@ -170,7 +170,7 @@ class CameraSystem
 
         ribbon = new FunkinSprite(133, -7);
         ribbon.frames = Paths.getSparrowAtlas('cameras/ribbons');
-        ribbon.animation.addByPrefix('ribbon', 'ribbon', 24, true);
+        ribbon.animation.addByPrefix('ribbon', 'ribbon', 30, true);
         ribbon.animation.play('ribbon');
         ribbon.blend = 0;
         ribbon.antialiasing = true;
@@ -362,7 +362,6 @@ class CameraSystem
         if (currentCamera == '')
             return;
 
-        //camName.loadGraphic(Paths.image('cameras/camText/' + currentCamera));
         camName.animation.play(currentCamera, true);
     }
 
